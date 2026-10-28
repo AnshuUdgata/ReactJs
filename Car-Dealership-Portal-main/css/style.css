@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f5f5f5;
+    color: #222;
+}
+
+/* ===================
+   NAVIGATION
+=================== */
+
+.navbar {
+    background: #111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 7%;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #ffcc00;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 25px;
+}
+
+/* ===================
+   HERO
+=================== */
+
+.hero {
+    min-height: 550px;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.55)
+        ),
+        url("../images/car1.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* ===================
+   BUTTON
+=================== */
+
+.btn {
+    display: inline-block;
+    background: #e63946;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #c1121f;
+}
+
+/* ===================
+   SECTION
+=================== */
+
+.section {
+    padding: 50px 7%;
+}
+
+.section h1,
+.section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ===================
+   CAR CONTAINER
+=================== */
+
+.car-container {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* ===================
+   CAR CARD
+=================== */
+
+.car-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.car-info {
+    padding: 20px;
+}
+
+.car-info h3 {
+    margin-bottom: 10px;
+}
+
+.car-info h4 {
+    color: #e63946;
+    font-size: 20px;
+}
+
+/* ===================
+   PAGE BANNER
+=================== */
+
+.page-banner {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.page-banner h1 {
+    font-size: 40px;
+}
+
+/* ===================
+   FILTERS
+=================== */
+
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filters input,
+.filters select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+}
+
+/* ===================
+   FORMS
+=================== */
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ===================
+   DETAILS
+=================== */
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.details-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.details h1 {
+    text-align: left;
+}
+
+.details h2 {
+    color: #e63946;
+}
+
+/* ===================
+   EMI
+=================== */
+
+.emi-box {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.1);
+}
+
+.emi-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#emiResult {
+    margin-top: 20px;
+    color: #e63946;
+    line-height: 2;
+}
+
+/* ===================
+   ABOUT
+=================== */
+
+.about {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about p {
+    margin-bottom: 30px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+    gap: 20px;
+}
+
+.features div {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ===================
+   OFFER
+=================== */
+
+.offer {
+    text-align: center;
+    padding: 60px 20px;
+    background: #222;
+    color: white;
+}
+
+.offer h2 {
+    font-size: 35px;
+}
+
+/* ===================
+   AUTH
+=================== */
+
+.auth-box {
+    max-width: 450px;
+    margin: 80px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow:
+        0 3px 15px
+        rgba(0,0,0,0.15);
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ===================
+   FOOTER
+=================== */
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ===================
+   RESPONSIVE DESIGN
+=================== */
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        z-index: 100;
+    }
+
+    .navbar ul.show {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
