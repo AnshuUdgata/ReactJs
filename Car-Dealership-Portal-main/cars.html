@@ -3,25 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Cars - Car Dealership Portal</title>
+    <title>Our Cars - AutoDrive</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <header>
         <nav class="navbar">
-            <div class="logo">Car Dealership</div>
-            <ul class="nav-links">
+            <div class="logo">
+                AutoDrive
+            </div>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+            <ul id="navMenu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="cars.html">Cars</a></li>
                 <li><a href="about.html">About Us</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="test-drive.html">Test Drive</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+
+    <section class="page-banner">
         <h1>Car Inventory</h1>
-    </main>
+        <p>Explore our wide collection of cars and find your perfect ride.</p>
+    </section>
+
+    <section class="section">
+        <div class="filters-container">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="search">Search</label>
+                    <input 
+                        type="text" 
+                        id="search" 
+                        placeholder="Search by brand or model..." 
+                        oninput="filterCars()" 
+                        onkeyup="filterCars()">
+                </div>
+
+                <div class="filter-group">
+                    <label for="brandFilter">Brand</label>
+                    <select id="brandFilter" onchange="filterCars()">
+                        <option value="all">All Brands</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Hyundai">Hyundai</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Tata">Tata</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="priceFilter">Max Price</label>
+                    <select id="priceFilter" onchange="filterCars()">
+                        <option value="all">All Prices</option>
+                        <option value="10">Under ₹10 Lakhs</option>
+                        <option value="15">Under ₹15 Lakhs</option>
+                        <option value="20">Under ₹20 Lakhs</option>
+                        <option value="25">Under ₹25 Lakhs</option>
+                    </select>
+                </div>
+
+                <div class="filter-group filter-btn-group">
+                    <button type="button" class="btn-reset" onclick="document.getElementById('search').value=''; document.getElementById('brandFilter').value='all'; document.getElementById('priceFilter').value='all'; filterCars();">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="carList" class="car-container"></div>
+    </section>
+
+    <footer>
+        <p>
+            © 2026 AutoDrive Car Dealership. All Rights Reserved.
+        </p>
+    </footer>
+
     <script src="js/cars.js"></script>
     <script src="js/script.js"></script>
 </body>

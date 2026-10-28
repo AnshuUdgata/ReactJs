@@ -170,8 +170,8 @@ function filterCars() {
 
 
             return matchesSearch &&
-                   matchesBrand &&
-                   matchesPrice;
+                matchesBrand &&
+                matchesPrice;
 
         });
 

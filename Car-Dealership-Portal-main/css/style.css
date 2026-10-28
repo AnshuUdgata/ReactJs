@@ -192,18 +192,103 @@ body {
    FILTERS
 =================== */
 
+.filters-container {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 35px;
+}
+
 .filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.filter-group {
     display: flex;
-    gap: 15px;
-    margin-bottom: 30px;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
 }
 
 .filters input,
-.filters select {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex: 1;
+.filters select,
+.filter-group input,
+.filter-group select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #222;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filters input:hover,
+.filters select:hover,
+.filter-group input:hover,
+.filter-group select:hover {
+    border-color: #999;
+}
+
+.filters input:focus,
+.filters select:focus,
+.filter-group input:focus,
+.filter-group select:focus {
+    outline: none;
+    border-color: #e63946;
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+.filters select,
+.filter-group select {
+    cursor: pointer;
+}
+
+.filter-btn-group {
+    display: flex;
+    align-items: flex-end;
+}
+
+.btn-reset {
+    background: #f1f1f1;
+    color: #333;
+    padding: 12px 22px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    height: 46px;
+    white-space: nowrap;
+}
+
+.btn-reset:hover {
+    background: #e63946;
+    color: white;
+    border-color: #e63946;
+}
+
+#carList > p {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* ===================
@@ -377,6 +462,20 @@ footer {
    RESPONSIVE DESIGN
 =================== */
 
+@media (max-width: 992px) {
+    .filters {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-btn-group {
+        grid-column: 1 / -1;
+    }
+
+    .btn-reset {
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-btn {
         display: block;
@@ -403,8 +502,17 @@ footer {
         font-size: 35px;
     }
 
+    .filters-container {
+        padding: 20px 15px;
+    }
+
     .filters {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .btn-reset {
+        width: 100%;
     }
 
     .details {
